@@ -5,3 +5,4 @@ A Python Flask Web Application
 - Python >= 3.9
 - Framework: Flask
 - Packages: SQLAlchemy, Marshmallow
+- Database: SQLite
