@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Pangolin:400,700|Proxima+Nova" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+
+<body>
+    <h1>Todos</h1>
+    <h2>Create</h2>
+    
+    <form method="POST" action="/api/add">
+        <div class="form-group">
+            <div class="todo">
+                <input type="text" name="itemDescription" placeholder="Add a new TODO item">
+                <button type="submit" class="btn btn-blue" value="add">Create</button>
+            </div>
+        </div>
+    </form>
+
+    <h2>Tasks</h2>
+    {% for item in todo_list.json: %}
+    <form method="GET" action="/api/update">
+        <div class="form-group">
+            <input type="hidden" name="id" value="{{item['id']}}">
+
+            {% if item['status'] == "Done" %}
+            <div class="todo">
+                <div>
+                    <input type="checkbox" name="itemStatus" checked disabled>
+                </div>
+
+                <input type="text" name="itemDescription" value="{{item['description']}}" readonly >
+
+                <a class="btn btn-orange" href="/api/delete?id={{item['id']}}"> Delete</a>
+            </div>
+
+            {% else %}
+            <div class="todo">
+                <div>
+                    <input type="checkbox" name="itemStatus" value="{{item['status']}}">
+                </div>
+
+                <input type="text" name="itemDescription" value="{{item['description']}}">
+
+                <button class="btn btn-blue" type="submit"> Update</button>
+                <a class="btn btn-orange" href="/api/delete?id={{item['id']}}"> Delete</a>
+            </div> 
+
+            {% endif %}
+
+        </div>
+    </form>
+
+    {% endfor %}
+</body>
+
+</html>

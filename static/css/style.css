@@ -1,0 +1,89 @@
+body{
+    color: #222222;
+    margin: auto;
+    width: 800px;
+    font-family: 'Proxima Nova', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px;
+}
+
+h1{
+    font-size: 50px;
+    margin: 18px 0;
+    text-align: center;
+}
+
+h2{
+    font-size: 40px;
+    margin: 18px 0;
+}
+
+.btn {
+    background: none;
+    display: inline-block;
+    align-items: center;
+    padding: 6px 10px;
+    margin: 2px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+}
+
+.btn-blue {
+    border-color: #2196F3;
+    color: #2196F3;
+    cursor: pointer;
+}
+
+.btn-blue:hover {
+    background: #0d8bf2;
+    color: #fff;
+}
+
+.btn-orange {
+    border-color: #f38021;
+    color: #f38021;
+}
+
+.btn-orange:hover {
+    background: #f38021;
+    color: #fff;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input[type="text"]{
+    width: 100%;
+}
+
+input {
+    padding: 5px 15px;
+    color: #444444;
+    margin-right: 2px;
+}
+
+input:focus {
+    outline: none;
+    border: #2196F3 solid;
+}
+
+.todo {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.todo > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0 0;
+}
+
+.todo > div input[type="checkbox"] {
+    margin : 0;
+    width: 29px;
+    height: 29px;
+}
